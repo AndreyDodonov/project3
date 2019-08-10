@@ -1,5 +1,16 @@
 const popupWindow = () => {
-    console.log('its work');
+    
+    const consultationBtn = document.querySelector('.consultation-btn'),
+          consultationWindow = document.querySelector('.popup-consultation');
+
+    const showPopup = () => {
+        consultationWindow.style.display = 'block';
+    };
+
+    consultationBtn.addEventListener('click', showPopup);
+
+   
+
 };
 
 
