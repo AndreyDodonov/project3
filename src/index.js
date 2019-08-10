@@ -1,7 +1,7 @@
 'use strict';
 
-import popupWindow from './modules/popupWindow';
+import popupConsultWindow from './modules/popupConsultWindow';
 
 
 
-popupWindow();
+popupConsultWindow();
