@@ -1,0 +1,26 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "![learn project](https://img.shields.io/badge/Learn-learn%20project-orange.svg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode=development",
+    "build": "webpack --mode=production",
+    "watch": "wbpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreyDodonov/project3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreyDodonov/project3/issues"
+  },
+  "homepage": "https://github.com/AndreyDodonov/project3#readme",
+  "devDependencies": {
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
