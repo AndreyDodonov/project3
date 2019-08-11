@@ -1,7 +1,7 @@
 
 const sendForm = () => {
 
-console.log('sendForm - work');
+
 
 
 
