@@ -1,20 +1,18 @@
 const popup = () => {
-    
-const popupDialog = document.querySelector('.popup-dialog'),
-      popupBtn = document.querySelectorAll('.button'),
 
-      discountBtn = document.querySelectorAll('.discount-btn'),
-      discountPopup = document.querySelector('.popup-discount');
+    const popupClose = document.querySelectorAll('.popup-close'),
+        discountBtn = document.querySelectorAll('.discount-btn'),
+        discountPopup = document.querySelector('.popup-discount');
 
     /* закрытие попапов */
-    popupDialog.addEventListener('click', (event) => {
+    discountPopup.addEventListener('click', (event) => {
         let target = event.target;
-        if (target.classList.contains('.popup-close')) {
-            popupDialog.style.display = 'none';
+        if (target === popupClose) {
+            discountPopup.style.display = 'none';
         } else {
             target = target.closest('.popup-content');
             if (!target) {
-                popupDialog.style.display = 'none';
+                discountPopup.style.display = 'none';
             }
         }
     });
@@ -30,14 +28,14 @@ const popupDialog = document.querySelector('.popup-dialog'),
         elem.addEventListener('click', () => {
             if (!isMobile()) {
                 discountPopup.style.top = '0';
-                discountPopup.style.display = 'block';                
+                discountPopup.style.display = 'block';
             } else {
                 discountPopup.style.display = 'block';
             }
         });
     });
 
-   
+
 
 };
 
