@@ -1,7 +1,10 @@
 const popup = () => {
     
 const popupDialog = document.querySelector('.popup-dialog'),
-      popupBtn = document.querySelectorAll('.button');
+      popupBtn = document.querySelectorAll('.button'),
+
+      discountBtn = document.querySelectorAll('.discount-btn'),
+      discountPopup = document.querySelector('.popup-discount');
 
     /* закрытие попапов */
     popupDialog.addEventListener('click', (event) => {
@@ -16,20 +19,20 @@ const popupDialog = document.querySelector('.popup-dialog'),
         }
     });
 
-    /* открытие попапов */
+    /* открытие дискаунт попапа */
     function isMobile() {
         return navigator.userAgent.match(
             /Android|iPhone|iPad|iPod|kindle|Tablet|BlackBerry|mobile|Windows Phone|Opera Mini/i
         );
     }
 
-    popupBtn.forEach((elem) => {
+    discountBtn.forEach((elem) => {
         elem.addEventListener('click', () => {
             if (!isMobile()) {
-                popupDialog.style.top = '-100%';
-                popupDialog.style.display = 'block';                
+                discountPopup.style.top = '0';
+                discountPopup.style.display = 'block';                
             } else {
-                popupDialog.style.display = 'block';
+                discountPopup.style.display = 'block';
             }
         });
     });
