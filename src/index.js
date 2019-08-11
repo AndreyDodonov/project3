@@ -1,7 +1,13 @@
 'use strict';
 
-import popupConsultWindow from './modules/popupConsultWindow';
+import popup from './modules/popup';
+import sendForm from './modules/sendForm';
+import getValidUserData from './modules/validation';
 
 
-
-popupConsultWindow();
+/* валидация */
+getValidUserData();
+/* всплывающие окна */
+popup();
+/* отправка форм на север */
+sendForm();
