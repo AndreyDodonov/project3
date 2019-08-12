@@ -5,6 +5,8 @@ const sendForm = () => {
         successMessage = 'Спасибо! Мы с вами свяжемся',
         consultForm = document.querySelector('.main-form'),
         captureForm = document.querySelector('.capture-form'),
+        popupCaptureForm = document.querySelector('#popup-call-form'),
+        popupCheckForm = document.querySelector('#popup-check'),
         statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem';
     let form;
@@ -12,10 +14,17 @@ const sendForm = () => {
     document.body.addEventListener('submit', (event) => {
         if (event.target === consultForm) {
             form = consultForm;
-        } else
-        if (event.target === captureForm) {
-            form = captureForm;
         }
+        if (event.target === popupCheckForm) {
+            form = popupCheckForm;
+        }
+        if (event.target === popupCaptureForm) {
+            form = popupCaptureForm;
+        }
+        if (event.target === captureForm) {
+                form = captureForm;             
+        }
+        
 
 
         event.preventDefault();
@@ -34,6 +43,14 @@ const sendForm = () => {
                     throw new Error('status network not 200');
                 }
                 statusMessage.textContent = successMessage;
+                const inputs = document.querySelectorAll('input');
+                const textarea = document.querySelectorAll('textarea');
+                inputs.forEach(item => {
+                    item.value = '';
+                });
+                textarea.forEach(item =>{
+                    item.value ='';
+                });
             })
             .catch((error) => {
                 statusMessage.textContent = errorMessage;
