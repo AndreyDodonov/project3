@@ -6,7 +6,9 @@ const popup = () => {
         checkPopup = document.querySelector('.popup-check'),
         popup = document.querySelectorAll('.popup'),
         consultBtn = document.querySelector('.consultation-btn'),
-        consultPopup = document.querySelector('.popup-consultation');
+        consultPopup = document.querySelector('.popup-consultation'),
+        callMeBtn = document.querySelectorAll('.call-btn'),
+        callMePopup =document.querySelector('.popup-call');
 
     /* закрытие попапов */
     popup.forEach((elem) => {
@@ -60,7 +62,17 @@ const popup = () => {
 
     });
 
+    /* попап "перезвоните мне" */
+    callMeBtn.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            if (!isMobile()) {
+                callMePopup.style.top = '0';
+                callMePopup.style.display = 'block';
+            } else {
+                callMePopup.style.display = 'block'; // TODO добавить отображение на мобильных
+            }
+        });
+    });    
 };
-
 
 export default popup;
