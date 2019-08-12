@@ -4,7 +4,7 @@ const sendForm = () => {
         loadMessage = 'Загрузка...',
         successMessage = 'Спасибо! Мы с вами свяжемся',
         consultForm = document.querySelector('.main-form'),
-     
+
         statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem';
     let form;
@@ -13,18 +13,12 @@ const sendForm = () => {
         if (event.target === consultForm) {
             form = consultForm;
         }
-    //     if (event.target === formFooter) {
-    //         form = formFooter;
-    //     }
-    //     if (event.target === formPopup) {
-    //         form = formPopup;
-    //         form.style.color = 'white';
-    //     }
+
 
         event.preventDefault();
         form.appendChild(statusMessage);
         statusMessage.textContent = loadMessage;
-        
+
         const formData = new FormData(form);
         let body = {};
         for (let val of formData.entries()) {
