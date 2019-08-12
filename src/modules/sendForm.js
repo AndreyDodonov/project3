@@ -7,11 +7,16 @@ const sendForm = () => {
         captureForm = document.querySelector('.capture-form'),
         popupCaptureForm = document.querySelector('#popup-call-form'),
         popupCheckForm = document.querySelector('#popup-check'),
+        popupConsult = document.querySelector('#consult-form'),
+        directorForm = document.querySelector('.director-form'),
         statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem';
     let form;
 
     document.body.addEventListener('submit', (event) => {
+        if (event.target === directorForm){
+            form = directorForm;
+        }
         if (event.target === consultForm) {
             form = consultForm;
         }
@@ -24,7 +29,9 @@ const sendForm = () => {
         if (event.target === captureForm) {
                 form = captureForm;             
         }
-        
+        if (event.target === popupConsult) {
+                form = popupConsult;
+        }
 
 
         event.preventDefault();

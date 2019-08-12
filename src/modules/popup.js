@@ -4,7 +4,9 @@ const popup = () => {
         discountPopup = document.querySelector('.popup-discount'),
         checkBtn = document.querySelector('.check-btn'),
         checkPopup = document.querySelector('.popup-check'),
-        popup = document.querySelectorAll('.popup');
+        popup = document.querySelectorAll('.popup'),
+        consultBtn = document.querySelector('.consultation-btn'),
+        consultPopup = document.querySelector('.popup-consultation');
 
     /* закрытие попапов */
     popup.forEach((elem) => {
@@ -47,7 +49,16 @@ const popup = () => {
             checkPopup.style.display = 'block'; // TODO добавить отображение на мобильных
         }
     });
+    /* открытие попапа консультация */
+    consultBtn.addEventListener('click', () => {
+        if (!isMobile()) {
+            consultPopup.style.top = '0';
+            consultPopup.style.display = 'block';
+        } else {
+            consultPopup.style.display = 'block'; // TODO добавить отображение на мобильных
+        }
 
+    });
 
 };
 
