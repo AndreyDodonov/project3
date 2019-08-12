@@ -5,8 +5,7 @@ const moreBtn = () => {
 
     moreBtn.addEventListener('click', () => {
        
-        hiddenCards.style.display = 'flex';
-      
+        hiddenCards.style.display = 'flex';      
         hiddenCard.style.display = 'flex';
         moreBtn.style.display = 'none';
    });
