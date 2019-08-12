@@ -4,7 +4,6 @@ const sendForm = () => {
         loadMessage = 'Загрузка...',
         successMessage = 'Спасибо! Мы с вами свяжемся',
         consultForm = document.querySelector('.main-form'),
-
         statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem';
     let form;
