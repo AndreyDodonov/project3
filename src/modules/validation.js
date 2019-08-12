@@ -10,15 +10,16 @@ const getValidUserData = () => {
         });
     });
 
-    /* имя */
-    const userName = document.querySelectorAll('[name=user_name]');
+    //TODO: добавить латиницу
+    /* имя */ 
+    // const userName = document.querySelectorAll('[name=user_name]');
 
-    userName.forEach(item => {
-        item.addEventListener('input', (event) => {
-            const target = event.target;
-            target.value = target.value.replace(/[^а-яё ]/gi, '');
-        });
-    });
+    // userName.forEach(item => {
+    //     item.addEventListener('input', (event) => {
+    //         const target = event.target;
+    //         target.value = target.value.replace(/[^а-яё ]/gi, '');
+    //     });
+    // });
 };
 
 export default getValidUserData;
