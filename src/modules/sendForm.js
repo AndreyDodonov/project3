@@ -4,6 +4,7 @@ const sendForm = () => {
         loadMessage = 'Загрузка...',
         successMessage = 'Спасибо! Мы с вами свяжемся',
         consultForm = document.querySelector('.main-form'),
+        captureForm = document.querySelector('.capture-form'),
         statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem';
     let form;
@@ -11,6 +12,9 @@ const sendForm = () => {
     document.body.addEventListener('submit', (event) => {
         if (event.target === consultForm) {
             form = consultForm;
+        } else
+        if (event.target === captureForm) {
+            form = captureForm;
         }
 
 
