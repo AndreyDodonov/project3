@@ -1,7 +1,6 @@
 const popup = () => {
 
-    const popupClose = document.querySelectorAll('.popup-close'),
-        discountBtn = document.querySelectorAll('.discount-btn'),
+    const discountBtn = document.querySelectorAll('.discount-btn'),
         discountPopup = document.querySelector('.popup-discount'),
         checkBtn = document.querySelector('.check-btn'),
         checkPopup = document.querySelector('.popup-check'),
@@ -11,7 +10,7 @@ const popup = () => {
     popup.forEach((elem) => {
         elem.addEventListener('click', (event) => {
             let target = event.target;
-            if (target === popupClose) {
+            if (target.classList.contains('popup-close')) {
                 elem.style.display = 'none';
             } else {
                 target = target.closest('.popup-content');
@@ -21,6 +20,7 @@ const popup = () => {
             }
         });
     });
+    
     /* проверка на мобильные браузеры */
     function isMobile() {
         return navigator.userAgent.match(
@@ -46,7 +46,6 @@ const popup = () => {
         } else {
             checkPopup.style.display = 'block'; // TODO добавить отображение на мобильных
         }
-
     });
 
 
