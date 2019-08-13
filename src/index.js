@@ -5,6 +5,7 @@ import sendForm from './modules/sendForm';
 import getValidUserData from './modules/validation';
 import accordion from './modules/accordion';
 import addSenteceBtn from './modules/addSentenceBtn';
+import constructor from './modules/constructor';
 
 
 /* валидация */
@@ -17,3 +18,5 @@ sendForm();
 accordion();
 /* кнопка больше */
 addSenteceBtn();
+/* конструктор */
+constructor();
