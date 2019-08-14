@@ -8,16 +8,16 @@ const sendForm = () => {
         popupCaptureForm = document.querySelector('#popup-call-form'),
         popupCheckForm = document.querySelector('#popup-check'),
         callMePopup = document.querySelector('#popup-call-form'),
-        popupConsult = document.querySelector('#consult-form'),        
+        popupConsult = document.querySelector('#consult-form'),
         directorForm = document.querySelector('.director-form'),
         statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem';
     let form,
-        inputUserQuest = document.querySelector('input[name ="user_quest"]'); 
+        inputUserQuest = document.querySelector('input[name ="user_quest"]');
 
     document.body.addEventListener('submit', (event) => {
-        if (event.target === directorForm){            
-             form = popupConsult;
+        if (event.target === directorForm) {
+            form = popupConsult;
         }
         if (event.target === consultForm) {
             form = consultForm;
@@ -32,17 +32,16 @@ const sendForm = () => {
             form = popupCaptureForm;
         }
         if (event.target === captureForm) {
-                form = captureForm;             
+            form = captureForm;
         }
         if (event.target === popupConsult) {
-                form = popupConsult;
+            form = popupConsult;
         }
-
 
         event.preventDefault();
         form.appendChild(statusMessage);
         statusMessage.textContent = loadMessage;
-        
+
         const formData = new FormData(form);
         let body = {};
         for (let val of formData.entries()) {
@@ -53,8 +52,6 @@ const sendForm = () => {
             body.userQuest = inputUserQuest.value;
             inputUserQuest.value = '';
         }
-
-
 
         postData(body)
             .then((response) => {
@@ -67,8 +64,8 @@ const sendForm = () => {
                 inputs.forEach(item => {
                     item.value = '';
                 });
-                textarea.forEach(item =>{
-                    item.value ='';
+                textarea.forEach(item => {
+                    item.value = '';
                 });
             })
             .catch((error) => {
