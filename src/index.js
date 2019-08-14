@@ -6,6 +6,7 @@ import getValidUserData from './modules/validation';
 import accordion from './modules/accordion';
 import addSenteceBtn from './modules/addSentenceBtn';
 import constructor from './modules/constructor';
+import calculator from './modules/calculator';
 
 
 /* валидация */
@@ -20,3 +21,5 @@ accordion();
 addSenteceBtn();
 /* конструктор */
 constructor();
+/* калькулятор */
+calculator();
