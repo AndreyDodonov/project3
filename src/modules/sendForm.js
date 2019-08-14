@@ -8,15 +8,16 @@ const sendForm = () => {
         popupCaptureForm = document.querySelector('#popup-call-form'),
         popupCheckForm = document.querySelector('#popup-check'),
         callMePopup = document.querySelector('#popup-call-form'),
-        popupConsult = document.querySelector('#consult-form'),
+        popupConsult = document.querySelector('#consult-form'),        
         directorForm = document.querySelector('.director-form'),
         statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem';
-    let form;
+    let form,
+        inputUserQuest = document.querySelector('input[name ="user_quest"]'); 
 
     document.body.addEventListener('submit', (event) => {
-        if (event.target === directorForm){
-            form = directorForm;
+        if (event.target === directorForm){            
+             form = popupConsult;
         }
         if (event.target === consultForm) {
             form = consultForm;
@@ -41,12 +42,19 @@ const sendForm = () => {
         event.preventDefault();
         form.appendChild(statusMessage);
         statusMessage.textContent = loadMessage;
-
+        
         const formData = new FormData(form);
         let body = {};
         for (let val of formData.entries()) {
             body[val[0]] = val[1];
         }
+
+        if (inputUserQuest.value) {
+            body.userQuest = inputUserQuest.value;
+            inputUserQuest.value = '';
+        }
+
+
 
         postData(body)
             .then((response) => {
