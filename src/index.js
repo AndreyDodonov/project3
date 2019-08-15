@@ -13,8 +13,6 @@ import calculator from './modules/calculator';
 getValidUserData();
 /* всплывающие окна */
 popup();
-/* отправка форм на север */
-sendForm();
 /* раздел "частые вопросы" */
 accordion();
 /* кнопка больше */
@@ -23,3 +21,5 @@ addSenteceBtn();
 constructor();
 /* калькулятор */
 calculator();
+/* отправка форм на север */
+sendForm(calculator());
