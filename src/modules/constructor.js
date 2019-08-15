@@ -15,7 +15,7 @@ const constructor = () => {
         constructBtn[i].addEventListener('click', () => {
             panelCollapse.forEach((item) => {
                 item.classList.remove('in');
-            });
+            });            
             panelCollapse[i + 1].classList.add('in');
         });
     }

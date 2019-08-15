@@ -3,6 +3,7 @@ const sendForm = (obj) => {
     const errorMessage = 'Что-то пошло не так',
         loadMessage = 'Загрузка...',
         successMessage = 'Спасибо! Мы с вами свяжемся',
+
         consultForm = document.querySelector('.main-form'),
         captureForm = document.querySelector('.capture-form'),
         popupCaptureForm = document.querySelector('#popup-call-form'),
@@ -10,8 +11,7 @@ const sendForm = (obj) => {
         callMePopup = document.querySelector('#popup-call-form'),
         popupConsult = document.querySelector('#consult-form'),
         directorForm = document.querySelector('.director-form'),
-        statusMessage = document.createElement('div'),
-        formCalc = document.querySelector('.popup-discount .capture-form');
+        statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem';
     let form,
         inputUserQuest = document.querySelector('input[name ="user_quest"]');
@@ -54,10 +54,10 @@ const sendForm = (obj) => {
             inputUserQuest.value = '';
         }
 
-        // calcForm    
+
         let calcStore = obj;
 
-
+        Object.assign(body, calcStore);
 
         postData(body)
             .then((response) => {
@@ -78,6 +78,7 @@ const sendForm = (obj) => {
                 statusMessage.textContent = errorMessage;
                 console.error(error);
             });
+
     });
     const postData = (body) => {
         return fetch('./server.php', {

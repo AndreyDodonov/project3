@@ -20,7 +20,7 @@ const calculator = () => {
         distance: 0,
         cost: 0
     };
-
+    /* значение по умолчанию */
     if (myonoffswitchCheck.checked === true) {
         secondTankSection.classList.add('hidden');
         total = 10000;
@@ -51,7 +51,6 @@ const calculator = () => {
             diamTwoValue = selectBox[2].options[selectBox[2].selectedIndex].value,
             ringsTwoValue = selectBox[3].options[selectBox[3].selectedIndex].value;
 
-
         if (total === 10000) {
             total = total * diamValue * ringsValue;
             newTotal = total;
@@ -74,7 +73,7 @@ const calculator = () => {
 
         calcStore.cost = newTotal;
         calcStore.distance = +collapseFourInput.value;
-
+ 
         if (myonoffswitchCheckTwo.checked) {
             calcStore.bilge = 'Есть';
         } else if (!myonoffswitchCheckTwo.checked) {
@@ -99,7 +98,7 @@ const calculator = () => {
             countSum(target);
         }
     });
-    return calcStore;  
+    return calcStore;
 };
 
 
