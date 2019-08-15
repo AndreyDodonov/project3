@@ -1,4 +1,4 @@
-const sendForm = () => {
+const sendForm = (obj) => {
 
     const errorMessage = 'Что-то пошло не так',
         loadMessage = 'Загрузка...',
@@ -10,7 +10,8 @@ const sendForm = () => {
         callMePopup = document.querySelector('#popup-call-form'),
         popupConsult = document.querySelector('#consult-form'),
         directorForm = document.querySelector('.director-form'),
-        statusMessage = document.createElement('div');
+        statusMessage = document.createElement('div'),
+        formCalc = document.querySelector('.popup-discount .capture-form');
     statusMessage.style.cssText = 'font-size: 2rem';
     let form,
         inputUserQuest = document.querySelector('input[name ="user_quest"]');
@@ -52,6 +53,11 @@ const sendForm = () => {
             body.userQuest = inputUserQuest.value;
             inputUserQuest.value = '';
         }
+
+        // calcForm    
+        let calcStore = obj;
+
+
 
         postData(body)
             .then((response) => {
