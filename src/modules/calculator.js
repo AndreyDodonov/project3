@@ -1,26 +1,30 @@
 const calculator = () => {
-let calcResult = document.querySelector('#calc-result'),
+const calcResult = document.querySelector('#calc-result'),
     firstSwitch = document.querySelector('#myonoffswitch'),
-    body = {};
+    secondSwitch = document.querySelector('#myonoffswitch-two'),
+    secondTankCalc = document.querySelector('.second-tanc-section');
     
 
-
-
+let body = {
+    countTanks:1
+},
+    result = 10000;  
     
+    calcResult.value = result;
 
-
+    /* обработка свитчей, подсчёт итогово суммы, запись в объект body */
     firstSwitch.addEventListener('change', () => {
         
-        if (firstSwitch.checked) {
-            console.log('firstSwitch: ', firstSwitch.checked);
-            //скрываем второй колодец
-            //записываем в объект body на второй колодец нули  
+        if (firstSwitch.checked) {            
+            secondTankCalc.classList.add('hidden');
+            result = 10000;
         } else {
-            console.log('firstSwitch: ', firstSwitch.checked);
-            //записываем в объект показания в body со второго колодца
+            secondTankCalc.classList.remove('hidden'); 
+            result = 15000;
         }
-        // записываем данные с первого колодца        
-});
+        calcResult.value = result;
+                
+    });
 
     secondSwitch.addEventListener('change', () => {
         //записываем в бади "дно : 1000"
@@ -32,8 +36,8 @@ let calcResult = document.querySelector('#calc-result'),
 
     
 
-
-
+    /* вывод в результат расчёта */
+    calcResult.value = result;
 
 };
 
