@@ -54,10 +54,10 @@ const sendForm = (obj) => {
             inputUserQuest.value = '';
         }
 
-
+        if (form === popupCaptureForm) {
         let calcStore = obj;
-
         Object.assign(body, calcStore);
+        }
 
         postData(body)
             .then((response) => {
